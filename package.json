@@ -2,9 +2,6 @@
   "name": "bot_minecraft",
   "version": "0.1.0",
   "description": "Bot fishing experiment",
-  "engines": {
-    "node": "^14"
-  },
   "main": "index.js",
   "scripts": {
     "start": "node code/run.js",
