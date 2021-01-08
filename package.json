@@ -2,6 +2,9 @@
   "name": "bot_minecraft",
   "version": "0.1.0",
   "description": "Bot fishing experiment",
+  "engines": {
+    "node": "^14"
+  },
   "main": "index.js",
   "scripts": {
     "start": "node code/run.js",
@@ -11,9 +14,9 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "minecraft-data": "^2.54.0",
-    "mineflayer": "^2.20.0",
-    "mineflayer-navigate":"^0.0.10"
+    "minecraft-data": "^2.71.0",
+    "mineflayer": "^2.40.1",
+    "mineflayer-navigate": "0.0.10"
   },
   "devDependencies": {
     "standard": "^14.3.4"

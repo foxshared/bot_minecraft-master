@@ -21,14 +21,16 @@ const { GoalNear, GoalBlock, GoalXZ, GoalY, GoalInvert, GoalFollow } = require('
 
 const goals = require('../lib/goals');
 // Start listen port.
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 // const app = express();
+
+
 
 // Set the server target and bot username.....cracked only
 var options = {
     host: 'aqirito.aternos.me',//master99ayase.aternos.me
-    port: 49376,//25565
+    port: 25565,//25565
     username: '123',
     version: false
 }
@@ -192,16 +194,16 @@ function fish_start() {
             fishfix = true
         }, 1000)
     }
-
+    
 }
-function f() {
+function f(){
     bot.fish((err) => {
         fishfix = false
-
+  
         if (err) {
-            bot.chat(err.message)
+          bot.chat(err.message)
         }
-    })
+      })
 }
 
 function sound_detect(sound, cat) {
