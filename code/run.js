@@ -110,12 +110,14 @@ function main_loop(bot) {
 
             switch (message) {
                 case 'sleep':
+                    stopFishing()
                     goToSleep()
                     break
                 case 'wakeup':
                     wakeUp()
                     break
                 case 'follow':
+                    stopFishing()
                     if (!target) {
                         bot.chat('where a you?? hmm')
                         break
@@ -242,6 +244,7 @@ function stopFishing() {
     bot.removeListener('playerCollect', onCollect)
     if (fishfix) {
         bot.activateItem()
+        fishfix = false
     }
 }
 function dropItem() {
