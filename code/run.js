@@ -17,13 +17,13 @@ const { pathfinder, Movements } = require('../')
 
 const { GoalNear, GoalBlock, GoalXZ, GoalY, GoalInvert, GoalFollow } = require('../').goals
 
-const express = require('express');
+// const express = require('express');
 
 const goals = require('../lib/goals');
 // Start listen port.
-const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
 
-const app = express();
+// const app = express();
 
 // Set the server target and bot username.....cracked only
 var options = {
@@ -192,16 +192,16 @@ function fish_start() {
             fishfix = true
         }, 1000)
     }
-    
+
 }
-function f(){
+function f() {
     bot.fish((err) => {
         fishfix = false
-  
+
         if (err) {
-          bot.chat(err.message)
+            bot.chat(err.message)
         }
-      })
+    })
 }
 
 function sound_detect(sound, cat) {
