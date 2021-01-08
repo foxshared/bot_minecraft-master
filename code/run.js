@@ -17,17 +17,23 @@ const { pathfinder, Movements } = require('../')
 
 const { GoalNear, GoalBlock, GoalXZ, GoalY, GoalInvert, GoalFollow } = require('../').goals
 
-const express = require('express');
-
 const goals = require('../lib/goals');
-// Start listen port.
-const PORT = process.env.PORT || 3000;
 
-const app = new express();
+// Start website port.
+const cool = require('cool-ascii-faces');
+const express = require('express');
+const path = require('path');
+const PORT = process.env.PORT || 5000;
 
-app.get('/', function(request, response){
-    response.sendFile('html_load/preview.html');
-});
+express()
+    .use(express.static(path.join(__dirname, 'public')))
+    .set('views', path.join(__dirname, 'views'))
+    .set('view engine', 'ejs')
+    .get('/', (req, res) => res.render('pages/index'))
+    .get('/cool', (req, res) => res.send(cool()))
+    .listen(PORT, () => console.log(`Listening on ${PORT}`));
+
+
 
 // Set the server target and bot username.....cracked only
 var options = {
@@ -196,16 +202,16 @@ function fish_start() {
             fishfix = true
         }, 1000)
     }
-    
+
 }
-function f(){
+function f() {
     bot.fish((err) => {
         fishfix = false
-  
+
         if (err) {
-          bot.chat(err.message)
+            bot.chat(err.message)
         }
-      })
+    })
 }
 
 function sound_detect(sound, cat) {
