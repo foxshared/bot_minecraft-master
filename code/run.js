@@ -245,6 +245,9 @@ function stopFishing() {
     if (fishfix) {
         bot.activateItem()
         fishfix = false
+        flag = false
+
+        setTimeout(find_water, 5000)
     }
 }
 function dropItem() {
