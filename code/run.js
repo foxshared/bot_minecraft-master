@@ -21,14 +21,14 @@ const { GoalNear, GoalBlock, GoalXZ, GoalY, GoalInvert, GoalFollow } = require('
 
 const goals = require('../lib/goals');
 // Start listen port.
-// const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 // const app = express();
 
 // Set the server target and bot username.....cracked only
 var options = {
     host: 'aqirito.aternos.me',//master99ayase.aternos.me
-    port: 25565,//25565
+    port: 49376,//25565
     username: '123',
     version: false
 }
