@@ -205,6 +205,7 @@ function sound_detect(sound, cat) {
     // console.log(sound)
     // 73 is sound of fish is catched
     if (sound == 73 && fishfix) {
+        bot.chat('it fish')
         console.log('fish catch')
         bot.activateItem()
         fishfix = false
