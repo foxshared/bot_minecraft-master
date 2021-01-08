@@ -37,7 +37,7 @@ app.listen(PORT, () => {
 var options = {
     host: 'the_worlder.aternos.me',//master99ayase.aternos.me
     port: 25565,//25565
-    username: 'haruki',
+    username: '123',
     version: false
 }
 
@@ -151,13 +151,11 @@ function main_loop(bot) {
 
             }
         }, 1000)
-        setInterval(() => {
-            // console.log(fishfix)
-            // pitch = bot.entity.pitch
-            // console.log(pitch)
-            fishfix = fishfix
-        }, 2000)
     })
+    setInterval(() => {
+        // console.log(fishfix)
+        fishfix = fishfix
+    }, 2000)
 }
 function find_water() {
     flag = false
@@ -167,33 +165,14 @@ function find_water() {
         minDistance: 9, maxDistance: 10
     })
     if (water) {
-
         var w = water.position
         bot.pathfinder.setMovements(defaultMove)
         bot.pathfinder.setGoal(new GoalNear(w.x, w.y, w.z, 2))
 
-        // setTimeout(function () {
-        //     bot.lookAt(w, true, function () {
-        //         pitch = bot.entity.pitch
-        //         console.log('looking' + pitch)
-        //     })
-        // }, 1000)
-
-        // setTimeout(function () {
-        //     bot.look(bot.entity.yaw, -0.5, true, function () {
-        //         console.log('change look')
-        //     })
-        // },2000)
-        
-        setTimeout(ready,3000)
-
+        setTimeout(ready, 1000)
     }
 }
 function ready() {
-    // setTimeout(() => {
-    //     console.log(bot.blockInSight(100,))
-    // }, 1000)
-
     if (!flag) {
         bot.equip(mcData.itemsByName.fishing_rod.id, 'hand', (err) => {
             console.log('ready to start fishing')
@@ -258,19 +237,6 @@ function find_hopper() {
         const h = hopper.position
         bot.pathfinder.setMovements(defaultMove)
         bot.pathfinder.setGoal(new GoalNear(h.x, h.y, h.z, 2))
-        
-        // setTimeout(function () {
-        //     bot.lookAt(h, true, function () {
-        //         pitch = bot.entity.pitch
-        //         console.log('looking' + pitch)
-        //     })
-        // }, 1000)
-
-        // setTimeout(function () {
-        //     bot.look(bot.entity.yaw, -0.5, true, function () {
-        //         console.log('change look')
-        //     })
-        // },2000)
 
         setTimeout(dropItem, 5000)
     }
