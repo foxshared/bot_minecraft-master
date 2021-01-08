@@ -210,24 +210,6 @@ function f() {
         }
     })
 }
-
-function sound_detect(sound, cat) {
-    // console.log(sound)
-    // 73 is sound of fish is catched
-    if (sound == 73 && fishfix) {
-        bot.chat('it fish')
-        console.log('fish catch')
-        bot.activateItem()
-        fishfix = false
-        bot.removeListener('hardcodedSoundEffectHeard', sound_detect)
-        console.log('remove listener')
-
-
-    }
-}
-
-
-
 function onCollect(player, entity) {
     if (entity.kind === 'Drops' && player === bot.entity || player.username == '123') {
         bot.removeListener('playerCollect', onCollect)
@@ -309,21 +291,6 @@ function dropItem() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function relog() {
     console.log("Attempting to reconnect...");
     bot = mineflayer.createBot(options);
@@ -339,6 +306,11 @@ function goToSleep() {
                 bot.chat(`can't sleep: ${err.message}`)
             }
             else {
+                flag = false
+                if (fishfix) {
+                    bot.activateItem()
+                    fishfix = false
+                }
                 bot.chat("sleeping")
                 console.log("Bot sleep")
             }
