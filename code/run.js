@@ -27,9 +27,9 @@ const app = express();
 
 // Set the server target and bot username.....cracked only
 var options = {
-    host: 'the_worlder.aternos.me',//master99ayase.aternos.me
+    host: 'aqirito.aternos.me',//master99ayase.aternos.me
     port: 25565,//25565
-    username: 'haruki',
+    username: '123',
     version: false
 }
 
