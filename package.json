@@ -16,8 +16,7 @@
     "express": "^4.17.1",
     "minecraft-data": "^2.54.0",
     "mineflayer": "^2.20.0",
-    "mineflayer-navigate":"^0.0.10",
-    "woke-dyno": "0.0.4"
+    "mineflayer-navigate":"^0.0.10"
   },
   "devDependencies": {
     "standard": "^14.3.4"

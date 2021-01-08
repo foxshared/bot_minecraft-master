@@ -19,19 +19,11 @@ const { GoalNear, GoalBlock, GoalXZ, GoalY, GoalInvert, GoalFollow } = require('
 
 const express = require('express');
 
-const wakeDyno = require('woke-dyno');
-
 const goals = require('../lib/goals');
 // Start listen port.
 const PORT = process.env.PORT || 3000;
 
 const app = express();
-
-app.listen(PORT, () => {
-    console.log('Listen on ${ PORT }');
-    // Make Heroku server not sleep with call back the heroku app ur
-    wakeDyno('https://foxbotminecraft.herokuapp.com/').start();
-});
 
 // Set the server target and bot username.....cracked only
 var options = {
