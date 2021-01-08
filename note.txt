@@ -1,0 +1,6 @@
+--Update Repo
+--Make sure add origin and acc use
+
+git commit -m "comment"
+git push -u origin master
+
