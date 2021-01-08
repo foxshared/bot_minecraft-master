@@ -10,12 +10,6 @@
 // start fishing
 // if fish valid go to chest for deposit it..
 // and start it over
-// Start listen port.
-const PORT = process.env.PORT || 3000;
-
-listen(PORT, () => {
-    console.log(`Our app is running on port ${PORT}`);
-});
 
 const mineflayer = require('mineflayer');
 
@@ -26,8 +20,14 @@ const { GoalNear, GoalBlock, GoalXZ, GoalY, GoalInvert, GoalFollow } = require('
 const express = require('express');
 
 const goals = require('../lib/goals');
+// Start listen port.
+const PORT = process.env.PORT || 3000;
 
+const app = express();
 
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${PORT}`);
+});
 
 
 
