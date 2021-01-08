@@ -23,7 +23,11 @@ const goals = require('../lib/goals');
 // Start listen port.
 const PORT = process.env.PORT || 3000;
 
-const app = express();
+const app = new express();
+
+app.get('/', function(request, response){
+    response.sendFile('html_load/preview.html');
+});
 
 // Set the server target and bot username.....cracked only
 var options = {
