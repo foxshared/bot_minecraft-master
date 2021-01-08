@@ -6,7 +6,7 @@ const Vec3 = require('vec3').Vec3
 
 const THINK_TIMEOUT = 100 // ms
 
-function inject(bot) {
+function inject (bot) {
   bot.pathfinder = {}
 
   bot.pathfinder.bestHarvestTool = function (block) {
@@ -38,7 +38,7 @@ function inject(bot) {
   let thinking = false
   let lastNodeTime = performance.now()
 
-  function resetPath() {
+  function resetPath () {
     path = []
     if (digging) bot.stopDigging()
     digging = false
@@ -76,7 +76,7 @@ function inject(bot) {
 
   bot.on('physicTick', monitorMovement)
 
-  function isPositionNearPath(pos, path) {
+  function isPositionNearPath (pos, path) {
     for (const i in path) {
       const node = path[i]
       const dx = Math.abs(node.x - pos.x)
@@ -87,7 +87,7 @@ function inject(bot) {
     return false
   }
 
-  function fullStop() {
+  function fullStop () {
     bot.clearControlStates()
 
     // Force horizontal velocity to 0 (otherwise inertia can move us too far)
@@ -115,7 +115,7 @@ function inject(bot) {
   })
 
   class PlayerState {
-    constructor(bot, control) {
+    constructor (bot, control) {
       // Input / Outputs
       this.pos = bot.entity.position.clone()
       this.vel = bot.entity.velocity.clone()
@@ -133,7 +133,7 @@ function inject(bot) {
       this.control = control
     }
 
-    apply(bot) {
+    apply (bot) {
       bot.entity.position = this.pos
       bot.entity.velocity = this.vel
       bot.entity.onGround = this.onGround
@@ -147,7 +147,7 @@ function inject(bot) {
     }
   }
 
-  function canStraightPathTo(pos) {
+  function canStraightPathTo (pos) {
     const state = new PlayerState(bot, {
       forward: true,
       back: false,
@@ -169,7 +169,7 @@ function inject(bot) {
     return false
   }
 
-  function monitorMovement() {
+  function monitorMovement () {
     // Test freemotion
     if (stateMovements && stateMovements.allowFreeMotion && stateGoal && stateGoal.entity) {
       const target = stateGoal.entity
