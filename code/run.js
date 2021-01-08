@@ -301,10 +301,6 @@ function goToSleep() {
         matching: block => bot.isABed(block)
     })
     if (bed) {
-
-        flag = false
-        stopFishing()
-        
         bot.sleep(bed, (err) => {
             if (err) {
                 bot.chat(`can't sleep: ${err.message}`)
