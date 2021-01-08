@@ -37,7 +37,7 @@ app.listen(PORT, () => {
 var options = {
     host: 'the_worlder.aternos.me',//master99ayase.aternos.me
     port: 25565,//25565
-    username: '123',
+    username: 'haruki',
     version: false
 }
 
@@ -193,6 +193,7 @@ function ready() {
 }
 function fish_start() {
     bot.on('playerCollect', onCollect)
+    console.log('start fishing')
     if (!fishfix) {
         setTimeout(() => {
             bot.activateItem()
