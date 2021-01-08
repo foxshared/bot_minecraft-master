@@ -196,12 +196,22 @@ function fish_start() {
     console.log('start fishing')
     if (!fishfix) {
         setTimeout(() => {
-            bot.activateItem()
+            setTimeout(f, 1000)
             fishfix = true
         }, 1000)
     }
-    bot.on('hardcodedSoundEffectHeard', sound_detect)
+    
 }
+function f(){
+    bot.fish((err) => {
+        fishfix = false
+  
+        if (err) {
+          bot.chat(err.message)
+        }
+      })
+}
+
 function sound_detect(sound, cat) {
     // console.log(sound)
     // 73 is sound of fish is catched
@@ -216,6 +226,9 @@ function sound_detect(sound, cat) {
 
     }
 }
+
+
+
 function onCollect(player, entity) {
     if (entity.kind === 'Drops' && player === bot.entity || player.username == '123') {
         bot.removeListener('playerCollect', onCollect)
